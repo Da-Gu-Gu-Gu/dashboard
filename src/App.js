@@ -17,7 +17,7 @@ function App() {
   return (
     <Routers>
       <div className="bg-red-300 flex w-screen min-h-screen">
-        <div className={`transition-all sidebar bg-red-600 ${sidebarOpen?'w-[200px]':'w-[100px]'} h-screen`}>
+        <div className={`transition-all sidebar bg-gray-200  ${sidebarOpen?'w-[200px]':'w-[100px]'} h-screen`}>
           <Sidebar open={sidebarHandler} />
         </div>
         <div className="grow flex flex-col">
