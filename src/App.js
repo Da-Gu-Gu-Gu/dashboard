@@ -1,27 +1,31 @@
 import { BrowserRouter as Routers, Routes, Route } from "react-router-dom";
-import {useState} from 'react'
+import { useState } from "react";
 import "./App.css";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import Sidebar from './components/Sidebar'
+import Sidebar from "./components/Sidebar";
+import Nav from "./components/Nav";
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const [sidebarOpen,setSidebarOpen]=useState(false)
-
-  const sidebarHandler=()=>{
-    setSidebarOpen(!sidebarOpen)
-  }
+  const sidebarHandler = () => {
+    setSidebarOpen(!sidebarOpen);
+  };
 
   return (
     <Routers>
-      <div className="bg-red-300 flex w-screen min-h-screen">
-        <div className={`transition-all sidebar bg-gray-200  ${sidebarOpen?'w-[200px]':'w-[100px]'} h-screen`}>
-          <Sidebar open={sidebarHandler} />
+      <div className="bg-gray-200 overflow-hidden flex w-screen min-h-screen">
+        <div
+          className={`transition-all  sidebar bg-white ${
+            sidebarOpen ? "w-[250px]" : "w-[100px] text-center "
+          }  h-screen`}
+        >
+          <Sidebar open={sidebarHandler} sideopen={sidebarOpen} />
         </div>
-        <div className="grow flex flex-col">
-          <div className="nav h-[50px]  bg-blue-300  w-full">aa</div>
+        <div className="grow ml-10 flex flex-col mr-5">
+          <Nav />
 
           <Routes>
             <Route path="/" element={<Home />} />
