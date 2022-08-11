@@ -7,14 +7,17 @@ import { BsTruck, BsBoxSeam } from "react-icons/bs";
 import { RiFlagLine } from "react-icons/ri";
 import { BsPerson } from "react-icons/bs";
 import { Avatar, Image } from "antd";
+import { Link } from "react-router-dom";
 
 const Sidebar = ({ open, sideopen }) => {
   return (
-    <div className="h-full ">
-      <div className={`header  my-5 px-3 flex  justify-between relative`}>
-        <p className="text-4xl">
-          <FcCdLogo />
-        </p>
+    <div className="h-full relative ">
+      <div className={`header  py-5 px-3 flex  justify-between relative`}>
+        <Link to="/">
+          <p className="text-4xl">
+            <FcCdLogo />
+          </p>
+        </Link>
         <div
           onClick={open}
           className="iconwrapper border-4 border-gray-200 bg-purple-300/60 text-purple-700 
@@ -71,22 +74,24 @@ const Sidebar = ({ open, sideopen }) => {
       </div>
 
       {/* links */}
-      <div className="flex flex-col  flex-wrap gap-8 mt-10 grow h-[50%] justify-between">
+      <div className="flex flex-col  flex-wrap gap-8 mt-10 grow h-[55%] md:h-[60%] lg:h-[50%] xl:h-[60%]  justify-between">
         <div className="flex flex-col flex-wrap gap-8 ">
-          <div
-            className={`flex  w-4/5 mx-auto  text-gray-400 ${
-              !sideopen && "justify-center "
-            }  }`}
-          >
-            <p className="flex text-2xl mr-2 mb-0 ">
-              <MdOutlineDashboard />
-            </p>
-            <span
-              className={`${sideopen ? "lg:inline" : "hidden"}  text-normal`}
+          <Link to={"/about"}>
+            <div
+              className={`flex  w-4/5 mx-auto   text-gray-400 ${
+                !sideopen && "justify-center "
+              }  }`}
             >
-              Dashboard
-            </span>
-          </div>
+              <p className="flex text-2xl mr-2 mb-0 ">
+                <MdOutlineDashboard />
+              </p>
+              <span
+                className={`${sideopen ? "lg:inline" : "hidden"}  text-normal`}
+              >
+                Dashboard
+              </span>
+            </div>
+          </Link>
 
           <div
             className={`flex  w-4/5 mx-auto  text-gray-400  ${
@@ -153,12 +158,16 @@ const Sidebar = ({ open, sideopen }) => {
           </div>
         </div>
 
-        <div className="bg-purple-400 mx-2 rounded-lg p-2 text-center text-white cursor-pointer">
-          + Create shipment
+        <div className="bg-purple-400  absolute bottom-[100px] w-4/5 justify-itself-center rounded-lg p-2 text-center text-white cursor-pointer">
+          + {sideopen && "Create shipment"}
         </div>
       </div>
 
-      <div className="flex mt-3 border-t-2 p-2 items-center">
+      <div
+        className={`flex mt-3 border-t-2 p-2 w-full items-center  absolute bottom-5    ${
+          !sideopen ? "justify-center " : "justify-between"
+        }`}
+      >
         <Avatar
           src={
             <Image
@@ -167,11 +176,15 @@ const Sidebar = ({ open, sideopen }) => {
             />
           }
         />
-        <div className="grow mx-2">
-          <p className="font-bold mb-0">UserName</p>
-          <span>Manager</span>
-        </div>
-        <p>...</p>
+        {sideopen && (
+          <div className="flex w-full">
+            <div className="grow mx-2">
+              <p className="font-bold mb-0">UserName</p>
+              <span>Manager</span>
+            </div>
+            <p>...</p>
+          </div>
+        )}
       </div>
     </div>
   );

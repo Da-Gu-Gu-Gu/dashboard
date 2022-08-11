@@ -16,15 +16,15 @@ function App() {
 
   return (
     <Routers>
-      <div className="bg-gray-200 overflow-hidden flex w-screen min-h-screen">
+      <div className="bg-gray-200  flex w-screen min-h-screen">
         <div
-          className={`transition-all  sidebar bg-white ${
+          className={`transition-all  sidebar bg-white  ${
             sidebarOpen ? "w-[250px]" : "w-[100px] text-center "
-          }  h-screen`}
+          }  min-h-screen`}
         >
           <Sidebar open={sidebarHandler} sideopen={sidebarOpen} />
         </div>
-        <div className="grow ml-10 flex flex-col mr-5">
+        <div className="grow ml-10 min-h-screen flex flex-col mr-5">
           <Nav />
 
           <Routes>
