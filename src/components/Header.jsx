@@ -2,18 +2,19 @@ import React from "react";
 import IconButton from "./Header/IconButton";
 import User from "./Header/User";
 
-const Header = () => {
+const Header = ({ sideOpenHandler }) => {
   return (
-    <div className="sticky top-0  w-full bg-white flex items-center h-[50px] border-b border-slate-200 z-30">
+    <div className="sticky top-0  w-full  flex items-center h-[50px] border-b border-slate-200 z-30">
       <div className="px-4 sm:px-6 lg:px-8 flex flex-row items-center  w-full justify-between">
         {/* {/* Header: Left side */}
-        <div className="flex w-max items-center h-full">
+        <div
+          onClick={() => sideOpenHandler()}
+          className="flex w-max items-center h-full"
+        >
           {/* Hamburger button */}
           <button
             className="text-slate-500 hover:text-slate-600 lg:hidden"
             aria-controls="sidebar"
-            // aria-expanded={}
-            // onClick={() => setSidebarOpen(!sidebarOpen)}
           >
             <span className="sr-only">Open sidebar</span>
             <svg
@@ -30,7 +31,7 @@ const Header = () => {
 
         {/* Header: Right side */}
         <div className="flex   items-center justify-end">
-          <div className="px-8 flex flex-wrap gap-3">
+          <div className="lg:px-8 flex flex-wrap gap-3 ">
             <IconButton icon="search" />
             <IconButton icon="message" />
             <IconButton icon="info" />

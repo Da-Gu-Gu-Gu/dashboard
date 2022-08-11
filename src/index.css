@@ -3,3 +3,20 @@
 @tailwind utilities;
 
 @import '~antd/dist/antd.css';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+@media(max-width:768px){
+.mobile_menu_open{
+    display: block;
+    /* transform: translateX(0); */
+}
+.mobile_menu_close{
+    display: none;
+    /* transform:translateX(-200%) */
+}
+}

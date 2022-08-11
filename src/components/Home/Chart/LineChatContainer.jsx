@@ -3,7 +3,7 @@ import LineChatComponent from "./LineChatComponent";
 
 const LineChatContainer = () => {
   return (
-    <div className="bg-white p-5 w-[48%] shadow">
+    <div className="bg-white p-5 w-full md:w-[48%] shadow">
       <h1 className="text-gray-500 pb-4 border-b-2 ">Direct VS Indirect</h1>
       <div
         className="flex justify-between h-[50px] border-b-2 items-center

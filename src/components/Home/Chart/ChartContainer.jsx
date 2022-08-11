@@ -4,7 +4,7 @@ import { FaTelegramPlane } from "react-icons/fa";
 
 const ChartContainer = ({ color }) => {
   return (
-    <div className="bg-white shadow md:w-[48%] lg:w-[30%]  p-3">
+    <div className="bg-white shadow w-full md:w-[48%] lg:w-[30%]  p-3">
       <div className="flex justify-between p-2">
         <p className="text-2xl">
           <FaTelegramPlane color={color} />

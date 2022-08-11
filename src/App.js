@@ -18,13 +18,13 @@ function App() {
     <Routers>
       <div className="flex h-screen overflow-hidden">
         {/* <div className="flex bg-gray-100 overflow-hidden  h-screen"> */}
-        <Sidebar open={sidebarHandler} sideOpen={sidebarOpen} />
+        <Sidebar open={sidebarOpen} />
         {/* <div className="relative flex flex-col flex-1 h-screen overflow-y-auto overflow-x-hidden"> */}
         {/* Content area */}
-        <div className="h-full pb-20 bg-gray-100 grow">
+        <div className="h-full w-screen">
           {" "}
-          <Header />
-          <div className="relative flex flex-col flex-1 bg-gray-100 h-full  overflow-y-scroll overflow-x-hidden">
+          <Header sideOpenHandler={sidebarHandler} />
+          <div className="relative flex flex-col flex-1  bg-gray-100 h-full  overflow-y-scroll ">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/analytics" element={<About />} />

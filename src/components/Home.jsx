@@ -8,13 +8,13 @@ import Users from "./Home/Users";
 
 const Home = () => {
   return (
-    <div className=" h-full flex  flex-col items-center">
+    <div className=" h-max flex w-full flex-col items-center">
       <Bannder />
-      <div className="w-[90%] flex justify-between py-3">
+      <div className="w-[90%] flex md:flex-row flex-col flex-wrap gap-3 justify-between py-3">
         <Users />
         <Fitler />
       </div>
-      <div className="w-[90%] flex flex-wrap gap-5 justify-between py-5">
+      <div className="w-[90%] flex flex-wrap gap-5 mb-20 justify-between py-5">
         <ChartContainer color={"red"} />
         <ChartContainer color={"green"} />
         <ChartContainer color={"blue"} />

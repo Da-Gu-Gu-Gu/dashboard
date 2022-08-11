@@ -7,7 +7,12 @@ const Sidebar = ({ open }) => {
   const { pathname } = useLocation();
 
   return (
-    <div className="w-[250px] px-8 md:hidden lg:block left-0 lg:static lg:top-auto opacity-1 z-40 top-0 bg-gray-800 h-screen text-white">
+    <div
+      className={`
+      transition-all
+    ${open ? "mobie_menu_open" : "mobile_menu_close"}
+    w-[250px] px-8  lg:block left-0 overflow-hidden lg:static lg:top-auto opacity-1 z-40 top-0 bg-gray-800 h-screen text-white`}
+    >
       <div className="h-[80px] py-2">
         <p>Logo</p>
       </div>
