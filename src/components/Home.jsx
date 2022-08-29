@@ -1,10 +1,13 @@
 import React from "react";
+import Block from "./Block";
 
 const Home = () => {
   return (
-    <div className=" h-full flex items-center bg-white justify-center">
-      HOme
-    </div>
+    <>
+  <h1>home</h1>
+  <Block />
+  <Block />
+  </>
   );
 };
 
